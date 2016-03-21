@@ -16,6 +16,12 @@ import de.OFactory.Substitution.Objects.Element;
 
 public class Panel extends JPanel implements Runnable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	
 	private static int SCREEN_WIDTH = 1200;
 	private static int SCREEN_HEIGHT = 700;
 
@@ -108,20 +114,20 @@ public class Panel extends JPanel implements Runnable{
 	public void paintComponent(Graphics g){
 		super.paintComponent(g);
 		
-		g.setFont(this.norm);
+		g.setFont(Panel.norm);
 		
 		g.setColor(Color.RED);
 		g.drawString("FPS: " + this.fps, 10, 15);
 		g.drawString("NanoTime: " + this.last, 10, 30);
 		g.drawString("delta: " + this.delta, 10, 45);
-		g.drawString("Maus: " + this.mausx + " | " + this.mausy, 10, 60);
-		g.drawString("MausPressed: " + this.leftmaus, 10, 75);
+		g.drawString("Maus: " + Panel.mausx + " | " + Panel.mausy, 10, 60);
+		g.drawString("MausPressed: " + Panel.leftmaus, 10, 75);
 		
 		g.setColor(Color.black);
-		drawCenteredString(g, "Substitution", new Rectangle(0, SCREEN_HEIGHT/8, SCREEN_WIDTH, SCREEN_HEIGHT), this.head);
+		drawCenteredString(g, "Substitution", new Rectangle(0, SCREEN_HEIGHT/8, SCREEN_WIDTH, SCREEN_HEIGHT), Panel.head);
 		g.setColor(new Color(100, 100, 100));
-		drawCenteredString(g, "Eine typische Reaktion der Alkane", new Rectangle(0, SCREEN_HEIGHT/2, SCREEN_WIDTH, SCREEN_HEIGHT/4), this.ultra);
-		drawCenteredString(g, "OFactory", new Rectangle((int) (SCREEN_WIDTH*0.75), 0, SCREEN_WIDTH/4, SCREEN_HEIGHT/6), this.big);
+		drawCenteredString(g, "Eine typische Reaktion der Alkane", new Rectangle(0, SCREEN_HEIGHT/2, SCREEN_WIDTH, SCREEN_HEIGHT/4), Panel.ultra);
+		drawCenteredString(g, "OFactory", new Rectangle((int) (SCREEN_WIDTH*0.75), 0, SCREEN_WIDTH/4, SCREEN_HEIGHT/6), Panel.big);
 		
 		start.draw(g);
 		
@@ -153,7 +159,7 @@ public class Panel extends JPanel implements Runnable{
 	private void doLogic() {
 		
 		
-		start.update(this.mausx, this.mausy, this.leftmaus);
+		start.update(Panel.mausx, Panel.mausy, Panel.leftmaus);
 		start.setX(   (int) (SCREEN_WIDTH*0.7 - SCREEN_WIDTH/7)    );
 		start.setY(   (int) (SCREEN_HEIGHT*0.8 - SCREEN_HEIGHT/14) );
 		start.setWidth(      SCREEN_WIDTH/3                        );
@@ -167,11 +173,11 @@ public class Panel extends JPanel implements Runnable{
 		
 		int delta = ((width+height)/2)/80;
 		
-		this.ultra = new Font("Arial", Font.BOLD, 20 + delta);
-		this.big   = new Font("Arial", Font.BOLD, 10 + delta);
-		this.small = new Font("Arial", Font.BOLD,      delta);
-		this.norm  = new Font("Arial", Font.BOLD, 3 + delta);
-		this.head  = new Font("Arial", Font.BOLD, 80 + delta);
+		Panel.ultra = new Font("Arial", Font.BOLD, 20 + delta);
+		Panel.big   = new Font("Arial", Font.BOLD, 10 + delta);
+		Panel.small = new Font("Arial", Font.BOLD,      delta);
+		Panel.norm  = new Font("Arial", Font.BOLD, 3 + delta);
+		Panel.head  = new Font("Arial", Font.BOLD, 80 + delta);
 	}
 	
 	/**

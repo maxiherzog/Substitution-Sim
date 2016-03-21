@@ -3,10 +3,10 @@ package de.OFactory.Substitution.Objects;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.regex.PatternSyntaxException;
 
 public class Element {
 	
+	@SuppressWarnings("rawtypes")
 	public ArrayList<ArrayList> PSE = new ArrayList<ArrayList>();
 
 	//        NAME			 {Ordnungszahl, Symbol, Gruppe, Periode}

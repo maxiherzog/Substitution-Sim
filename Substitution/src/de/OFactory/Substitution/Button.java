@@ -3,7 +3,6 @@ package de.OFactory.Substitution;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
-import java.awt.Shape;
 
 
 public class Button implements Drawable {
