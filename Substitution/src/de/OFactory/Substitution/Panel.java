@@ -16,7 +16,7 @@ import de.OFactory.Substitution.Objects.Element;
 
 public class Panel extends JPanel implements Runnable{
 	
-	private static int SCREEN_WIDTH = 1000;
+	private static int SCREEN_WIDTH = 1200;
 	private static int SCREEN_HEIGHT = 700;
 
 	private JFrame frame;
